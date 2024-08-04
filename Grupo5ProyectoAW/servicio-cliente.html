@@ -86,14 +86,14 @@
             position: fixed;
             bottom: 20px;
             right: 20px;
-            z-index: 1050; /* Asegura que el botón esté encima de otros contenidos */
+            z-index: 1050; 
         }
         .modal-dialog {
-            max-width: 400px;
-            margin: 0;
-            height: 100%;
+            max-width: 400px; 
+            margin: 0; 
+            height: 100%; 
             display: flex;
-            align-items: flex-end;
+            align-items: flex-end; 
         }
         .modal-content {
             height: 100%;
@@ -272,7 +272,20 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body" id="chatBody">
+                <div class="modal-body">
+                    <!-- Mensajes de chat -->
+                    <div class="chat-message">
+                        <img src="img/icono.png" alt="Avatar" class="avatar">
+                        <div class="message">
+                            Hola, ¿cómo estás?
+                        </div>
+                    </div>
+                    <div class="chat-message user">
+                        <div class="message">
+                            ¡Estoy bien, gracias! ¿Y tú?
+                        </div>
+                    </div>
+                    <!-- Más mensajes aquí -->
                 </div>
                 <div class="modal-footer">
                     <input type="text" class="form-control" id="messageInput" placeholder="Escribe un mensaje...">
