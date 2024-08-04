@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="/css/login.css">
+    <link rel="icon" href="/img/icono.png" type="image/png">
+</head>
+<body>
+    <main class="body1">
+        <div class="container">
+            <h1>Iniciar Sesión</h1>
+            <br>
+            <form id="loginForm" class="form-group">
+                <img src="/img/avatar.png" alt="User Icon" style="width: 50px;">
+                <input type="text" name="username" id="username" placeholder="Username" required>
+                <img src="/img/candado.png" alt="Lock Icon" style="width: 50px;">
+                <input type="password" name="password" id="password" placeholder="Password" required>
+            </form>
+            <div id="error-message" class="error-message"></div>
+            <br>
+            <button class="btn btn-primary" onclick="login()">Iniciar Sesión</button>
+            <br>
+            <button class="btn btn-white">
+                <img src="/img/cromo.png" alt="" style="width: 30px;">
+                Inicia con Google
+            </button>
+            <br>
+            <p>
+                ¿No estás registrado? <a href="">¡Regístrate ahora!</a>
+            </p>
+        </div>
+    </main>
+    <footer>
+        <div class="inf">
+            <h2>BeastComplay</h2>
+            <p></p>
+        </div>
+        
+        <div class="inf">
+            <h4>Síguenos en las siguientes plataformas</h4>
+            <p>Buscanos en Facebook</p>
+            <p>Buscanos en Instagram</p>
+            <p>Buscanos en Youtube</p>
+        </div>
+        <div class="inf">
+            <h4>¿Listo para Volar Alto?</h4>
+            <p>
+                Desde fotografía aérea de alta resolución hasta soluciones avanzadas para la agricultura,
+                nuestros drones están diseñados para elevar tus proyectos al siguiente nivel.
+                ¡No te pierdas las últimas novedades y ofertas exclusivas!
+            </p>
+        </div>
+    </footer>
+    <script src="/js/login.js"></script>
+</body>
+</html>
