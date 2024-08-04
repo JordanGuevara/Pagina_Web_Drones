@@ -86,15 +86,15 @@
             position: fixed;
             bottom: 20px;
             right: 20px;
-            z-index: 1050; /* Asegura que el botón esté encima de otros contenidos */
+            z-index: 1050; 
         }
         /* Estilo para la modal de chat */
         .modal-dialog {
-            max-width: 400px; /* Ajusta el ancho máximo de la modal */
-            margin: 0; /* Elimina el margen por defecto */
-            height: 100%; /* Asegura que la modal ocupe la altura completa */
+            max-width: 400px; 
+            margin: 0;
+            height: 100%; 
             display: flex;
-            align-items: flex-end; /* Alinea la modal al fondo */
+            align-items: flex-end; 
         }
         .modal-content {
             height: 100%;
@@ -262,13 +262,12 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="chatModalLabel">Chat en Vivo</h5>
+                    <h5 class="modal-title" id="chatModalLabel">Beast.IA</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <!-- Mensajes de chat -->
                     <div class="chat-message">
                         <img src="img/icono.png" alt="Avatar" class="avatar">
                         <div class="message">
@@ -280,7 +279,6 @@
                             ¡Estoy bien, gracias! ¿Y tú?
                         </div>
                     </div>
-                    <!-- Más mensajes aquí -->
                 </div>
                 <div class="modal-footer">
                     <input type="text" class="form-control" placeholder="Escribe un mensaje...">
