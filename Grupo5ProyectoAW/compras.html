@@ -1,16 +1,114 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Facturas</title>
+    <title>Compras</title>
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/bootstrap-grid.css">
     <link rel="stylesheet" href="css/bootstrap-reboot.css">
     <link rel="icon" href="img/icono.png" type="image/png">
+    <style>
+        body {
+            background-color: white;
+            color: black;
+            padding-top: 70px; /* Espacio para el encabezado fijo */
+        }
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: -250px; /* Oculto inicialmente */
+            width: 250px;
+            height: 100%;
+            background-color: #343a40;
+            transition: left 0.3s;
+            padding-top: 60px; /* Espacio para el encabezado */
+            z-index: 1000; /* Asegura que esté encima del contenido principal */
+        }
+        .sidebar a {
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            display: block;
+        }
+        .sidebar a:hover {
+            background-color: #495057;
+        }
+        .menu-icon {
+            position: absolute;
+            left: 10px;
+            top: 60px; /* Justo debajo del encabezado */
+            cursor: pointer;
+            color: #343a40;
+            font-size: 24px;
+            z-index: 1001; /* Asegura que esté encima del encabezado */
+        }
+        .menu-icon:hover {
+            color: #495057;
+        }
+        .menu-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 40px; /* Espacio sensible al pasar el mouse */
+            height: 100%;
+            z-index: 1001; /* Asegura que esté encima del encabezado */
+        }
+        .menu-container:hover .sidebar {
+            left: 0; /* Muestra el menú al pasar el mouse */
+        }
+        .purchase-container {
+            margin: 20px;
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 5px;
+            background-color: #f8f9fa;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .purchase-img {
+    width: 200px; 
+    height: 140px; 
+    object-fit: cover;
+    margin-right: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.6);
+}
+
+.purchase-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+    flex: 1; 
+}
+
+        .purchase-status {
+            font-weight: bold;
+        }
+        #btn-cancelar{
+            background-color: #4f4545;
+            
+            border: none;
+            width: 160px;
+            border-radius: 10px;
+        }
+        #btn-cancelar:hover{
+            background-color: #0d1115;
+        }
+        #btn-comprar{
+            background-color: #4f4545;
+            border: none;
+            width: 160px;
+            border-radius: 10px;
+        }
+        #btn-comprar:hover{
+            background-color: #0d1115;
+        }
+       
+    </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <a class="navbar-brand" href="index.html">Beast Complay</a>
         <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
             aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation"></button>
@@ -40,11 +138,54 @@
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                <input class="form-control mr-sm-2" type="text" placeholder="Buscar">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
             </form>
         </div>
     </nav>
+
+    <div class="menu-container">
+        <div class="menu-icon">☰</div>
+        <div class="sidebar">
+            <a href="compras.html">Compras</a>
+            <a href="ventas.html">Ventas</a>
+            <a href="configuracion.html">Configuración</a>
+            <a href="soporte.html">Soporte</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>Mis Compras</h2>
+
+        <div class="purchase-container">
+            <h5>Drone XYZ</h5>
+            <div class="row">
+                <div class="col-md-2 d-flex align-items-center">
+                    <img src="img/dron-y-agricultura.jpg" alt="Drone 1" class="purchase-img img-fluid">
+                </div>
+                <div class="col-md-10 purchase-info d-flex flex-column justify-content-center">
+                    <p>Descripción breve del Drone XYZ.</p>
+                    <p><strong>Cantidad:</strong> 1</p>
+                    <p><strong>Fecha de compra:</strong> 2024-07-15</p>
+                    <p class="purchase-status"><strong>Estado:</strong> Entregado</p>
+                    
+                </div>
+                <div class="col-md-2 d-flex flex-column align-items-end justify-content-center">
+                    <button id="btn-comprar" class="btn btn-primary mb-2">Ver compra</button>
+                    <button id="btn-cancelar" class="btn btn-danger">Cancelar compra</button>
+                </div>
+            </div>
+            
+        </div>
+
+
+            
+        </div>
+
+       
+
+    </div>
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
