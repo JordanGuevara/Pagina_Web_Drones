@@ -88,13 +88,12 @@
             right: 20px;
             z-index: 1050; /* Asegura que el botón esté encima de otros contenidos */
         }
-        /* Estilo para la modal de chat */
         .modal-dialog {
-            max-width: 400px; /* Ajusta el ancho máximo de la modal */
-            margin: 0; /* Elimina el margen por defecto */
-            height: 100%; /* Asegura que la modal ocupe la altura completa */
+            max-width: 400px;
+            margin: 0;
+            height: 100%;
             display: flex;
-            align-items: flex-end; /* Alinea la modal al fondo */
+            align-items: flex-end;
         }
         .modal-content {
             height: 100%;
@@ -103,7 +102,8 @@
         }
         .modal-body {
             flex: 1;
-            overflow-y: auto; 
+            overflow-y: auto;
+            padding: 15px;
         }
         .chat-message {
             margin-bottom: 15px;
@@ -115,6 +115,7 @@
             height: 40px;
             border-radius: 50%;
             margin-right: 10px;
+            display: none; 
         }
         .chat-message .message {
             background: #f1f1f1;
@@ -127,6 +128,12 @@
             color: #fff;
             margin-left: auto;
         }
+        .chat-message.system {
+            align-items: flex-start;
+        }
+        .chat-message.system .avatar {
+            display: block; 
+        }
         .modal-footer {
             display: flex;
             align-items: center;
@@ -135,7 +142,6 @@
         }
         .modal-footer input {
             flex: 1;
-            margin-right: 10px;
         }
     </style>
 </head>
@@ -257,34 +263,20 @@
     <button type="button" class="btn btn-primary btn-floating" data-toggle="modal" data-target="#chatModal">
         <i class="fas fa-comments"></i>
     </button>
-    <div class="modal fade" id="chatModal" tabindex="-1" role="dialog" aria-labelledby="chatModalLabel"
-        aria-hidden="true">
+    <div class="modal fade" id="chatModal" tabindex="-1" role="dialog" aria-labelledby="chatModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="chatModalLabel">Chat en Vivo</h5>
+                    <h5 class="modal-title" id="chatModalLabel">Beast.IA</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body">
-                    <!-- Mensajes de chat -->
-                    <div class="chat-message">
-                        <img src="img/icono.png" alt="Avatar" class="avatar">
-                        <div class="message">
-                            Hola, ¿cómo estás?
-                        </div>
-                    </div>
-                    <div class="chat-message user">
-                        <div class="message">
-                            ¡Estoy bien, gracias! ¿Y tú?
-                        </div>
-                    </div>
-                    <!-- Más mensajes aquí -->
+                <div class="modal-body" id="chatBody">
                 </div>
                 <div class="modal-footer">
-                    <input type="text" class="form-control" placeholder="Escribe un mensaje...">
-                    <button type="button" class="btn btn-primary">Enviar</button>
+                    <input type="text" class="form-control" id="messageInput" placeholder="Escribe un mensaje...">
+                    <button type="button" class="btn btn-primary" id="sendMessage">Enviar</button>
                 </div>
             </div>
         </div>
@@ -338,6 +330,46 @@
         }
 
         getWeather();
+
+        //Manejo del chat Beast
+        document.addEventListener('DOMContentLoaded', function() {
+            const sendMessageButton = document.getElementById('sendMessage');
+            const messageInput = document.getElementById('messageInput');
+            const chatBody = document.getElementById('chatBody');
+
+            function addMessage(text, isUser) {
+                const messageDiv = document.createElement('div');
+                messageDiv.classList.add('chat-message');
+                if (isUser) {
+                    messageDiv.classList.add('user');
+                } else {
+                    messageDiv.classList.add('system');
+                }
+                messageDiv.innerHTML = `
+                    ${!isUser ? '<img src="img/icono.png" alt="Avatar" class="avatar">' : ''}
+                    <div class="message">${text}</div>
+                `;
+                chatBody.appendChild(messageDiv);
+                chatBody.scrollTop = chatBody.scrollHeight;
+            }
+
+            sendMessageButton.addEventListener('click', function() {
+                const messageText = messageInput.value.trim();
+                if (messageText) {
+                    addMessage(messageText, true); 
+                    messageInput.value = '';
+                    setTimeout(() => {
+                        addMessage('Hola', false);
+                    }, 1000); 
+                }
+            });
+
+            messageInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    sendMessageButton.click();
+                }
+            });
+        });
 
     </script>
 </body>
