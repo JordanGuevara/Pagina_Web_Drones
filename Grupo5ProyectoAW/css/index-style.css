@@ -82,9 +82,36 @@ main{
 }
 .inf-drones{
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 0.5fr;
     border: #211C24 solid 1px;
+    height: 800px;
+    grid-template-columns: 1fr 1fr;
+    
+    
 }
+.seccion1{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+.seccion2.imag-grande{
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+.seccion1-1{
+    background-image: url(https://agrospray.com.ar/blog/wp-content/uploads/2022/12/Screenshot-2022-12-28-09.49.13.png);
+}
+.seccion1-2-1{
+ background-color: #211C24;
+}
+.seccion1-2-2{
+    background-color: #49464b;
+}
+.seccion1-2{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
 .row-inf{
     display: flex;
     align-items: center; 
@@ -92,6 +119,7 @@ main{
     justify-content: center;
     background-color: #211C24; 
     color: white;
+    gap: 2px;
 }
 
 .seccion{
