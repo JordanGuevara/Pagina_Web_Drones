@@ -129,6 +129,11 @@
                     <li><strong>Diseño Aerodinámico</strong>: Optimizados para volar en condiciones atmosféricas variables y turbulentas.</li>
                 </ul>
             <img src="img/dron_meteorologico.jpg" class="drone-img" alt="Drone 3">
+            <div id="weather-sidebar">
+                <h2>Clima Local</h2>
+                <div id="weather-data">
+                </div>
+            </div>
         </div>
     </main>
     <br>
@@ -159,12 +164,37 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
+        //Funcion para el clima
+        const apiKey = 'b230cf925ab7e97c5e787d3097286974';
+        const city = 'Santo Domingo';
+        const weatherApiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+        async function getWeather() {
+            try {
+                const response = await fetch(weatherApiUrl);
+                const data = await response.json();
+                displayWeather(data);
+            } catch (error) {
+                console.error('Error fetching weather data:', error);
+            }
+        }
+
+        function displayWeather(data) {
+            const weatherDataDiv = document.getElementById('weather-data');
+            weatherDataDiv.innerHTML = `
+            <p><strong>${data.name}</strong></p>
+            <p>Temperatura: ${data.main.temp}°C</p>
+            <p>Condición: ${data.weather[0].description}</p>`;
+        }
+
+        getWeather();
+
+        //Funcion para el accordion
         var acc = document.getElementsByClassName("accordion-section");
         var i;
 
         for (i = 0; i < acc.length; i++) {
             acc[i].addEventListener("click", function() {
-                // Cierra todas las secciones abiertas
                 for (var j = 0; j < acc.length; j++) {
                     if (acc[j] !== this) {
                         acc[j].classList.remove("active");
@@ -173,7 +203,6 @@
                     }
                 }
 
-                // Alterna la sección clickeada
                 this.classList.toggle("active");
                 var panel = this.nextElementSibling;
                 if (panel.style.maxHeight) {

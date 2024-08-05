@@ -9,141 +9,7 @@
     <link rel="stylesheet" href="css/bootstrap-grid.css">
     <link rel="stylesheet" href="css/bootstrap-reboot.css">
     <link rel="icon" href="img/icono.png" type="image/png">
-    <style>
-        #responsive-image {
-            width: 100%;
-            height: auto;
-            display: block;
-            object-fit: cover;
-        }
-
-        .card {
-            display: flex;
-            flex-direction: column;
-            height: 95%;
-            border: 1px solid #ddd;
-            border-radius: .25rem;
-            margin-bottom: 20px;
-        }
-
-        .card-body {
-            flex: 2 1 auto;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-
-        .card-footer {
-            text-align: center;
-        }
-
-        footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            padding: 20px;
-            color: white;
-            background-color: black;
-            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-        }
-
-        .inf {
-            flex: 1;
-            margin: 0 10px;
-        }
-
-        .inf h2,
-        .inf h4 {
-            margin: 0 0 10px;
-        }
-
-        .inf p {
-            margin: 0 0 5px;
-
-        }
-
-        .card-body>button {
-            margin-bottom: 20px;
-        }
-
-        #weather-sidebar {
-            width: 250px;
-            position: fixed;
-            top: 0;
-            right: 0;
-            background-color: #f4f4f4;
-            padding: 20px;
-            border-left: 1px solid #ddd;
-        }
-
-        #weather-data {
-            margin-top: 20px;
-        }
-
-        .btn-floating {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 1050; 
-        }
-        .modal-dialog {
-            max-width: 400px; 
-            margin: 0; 
-            height: 100%; 
-            display: flex;
-            align-items: flex-end; 
-        }
-        .modal-content {
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-        }
-        .modal-body {
-            flex: 1;
-            overflow-y: auto;
-            padding: 15px;
-        }
-        .chat-message {
-            margin-bottom: 15px;
-            display: flex;
-            align-items: flex-start;
-        }
-        .chat-message .avatar {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            margin-right: 10px;
-            display: none; 
-        }
-        .chat-message .message {
-            background: #f1f1f1;
-            padding: 10px;
-            border-radius: 10px;
-            max-width: 70%;
-        }
-        .chat-message.user .message {
-            background: #007bff;
-            color: #fff;
-            margin-left: auto;
-        }
-        .chat-message.system {
-            align-items: flex-start;
-        }
-        .chat-message.system .avatar {
-            display: block; 
-        }
-        .modal-footer {
-            display: flex;
-            align-items: center;
-            border-top: none;
-            padding: 10px;
-        }
-        .modal-footer input {
-            flex: 1;
-        }
-    </style>
+    <link rel="stylesheet" href="css/servicio-cliente-style.css">
 </head>
 
 <body>
@@ -185,7 +51,6 @@
     <main>
         <div class="container mt-5">
             <div class="row">
-                <!-- Tarjeta 1 -->
                 <div class="col-md-4">
                     <div class="card">
                         <div class="card-body">
@@ -197,7 +62,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- Tarjeta 2 -->
                 <div class="col-md-4">
                     <div class="card">
                         <div class="card-body">
@@ -210,7 +74,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- Tarjeta 3 -->
                 <div class="col-md-4">
                     <div class="card">
                         <div class="card-body">
@@ -221,7 +84,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- Tarjeta 4 -->
                 <div class="col-md-4">
                     <div class="card">
                         <div class="card-body">
@@ -230,7 +92,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- Tarjeta 5 -->
                 <div class="col-md-4">
                     <div class="card">
                         <div class="card-body">
@@ -241,7 +102,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- Tarjeta 6 -->
                 <div class="col-md-4">
                     <div class="card">
                         <div class="card-body">
@@ -255,11 +115,7 @@
             </div>
         </div>
     </main>
-    <div id="weather-sidebar">
-        <h2>Clima Local</h2>
-        <div id="weather-data">
-        </div>
-    </div>
+    
     <button type="button" class="btn btn-primary btn-floating" data-toggle="modal" data-target="#chatModal">
         <i class="fas fa-comments"></i>
     </button>
@@ -307,29 +163,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
     <script>
-        const apiKey = 'b230cf925ab7e97c5e787d3097286974';
-        const city = 'Santo Domingo';
-        const weatherApiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-
-        async function getWeather() {
-            try {
-                const response = await fetch(weatherApiUrl);
-                const data = await response.json();
-                displayWeather(data);
-            } catch (error) {
-                console.error('Error fetching weather data:', error);
-            }
-        }
-
-        function displayWeather(data) {
-            const weatherDataDiv = document.getElementById('weather-data');
-            weatherDataDiv.innerHTML = `
-            <p><strong>${data.name}</strong></p>
-            <p>Temperatura: ${data.main.temp}°C</p>
-            <p>Condición: ${data.weather[0].description}</p>`;
-        }
-
-        getWeather();
 
         //Manejo del chat Beast
         document.addEventListener('DOMContentLoaded', function() {

@@ -86,26 +86,31 @@ main{
     border: #211C24 solid 1px;
     height: 800px;
     grid-template-columns: 1fr 1fr;
-    
+    width: auto;
+    height: 750px;
     
 }
 .seccion1{
     display: grid;
     grid-template-rows: 1fr 1fr;
 }
-.seccion2.imag-grande{
-    display: block;
-    max-width: 100%;
-    height: auto;
+.seccion2{
+    background-image: url(https://www.expocihachub.com/img/blog/aplicaciones-de-drones-en-construccion-uso-de-drones-construc.jpg);
 }
 .seccion1-1{
     background-image: url(https://agrospray.com.ar/blog/wp-content/uploads/2022/12/Screenshot-2022-12-28-09.49.13.png);
 }
 .seccion1-2-1{
- background-color: #211C24;
+    background-color: #2a272c;
 }
 .seccion1-2-2{
-    background-color: #49464b;
+    background-color: #201c22;
+}
+.seccion1-2-1,.seccion1-2-2{
+    color: aliceblue;
+    align-items: center;
+    align-content: center;
+    padding: 20px;
 }
 .seccion1-2{
     display: grid;
@@ -158,11 +163,16 @@ main{
     max-width: 100%;
     height: auto;
 }
-button{
-    background-color: #2a272c;
+.btn-shop{
+    background-color: #252029;
     border-radius: 20px 20px 20px 20px;
     width: 200px;
     height: 50px;
     box-shadow: none;
     border: 1px solid white;
+    color: white;
+}
+.btn-shop:hover{
+    background-color: #4a474d;
+    cursor: pointer;
 }
