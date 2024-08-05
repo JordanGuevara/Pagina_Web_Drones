@@ -130,9 +130,18 @@
                 </ul>
             <img src="img/dron_meteorologico.jpg" class="drone-img" alt="Drone 3">
             <div id="weather-sidebar">
-                <h2>Clima Local</h2>
-                <div id="weather-data">
-                </div>
+                <h2>Clima del Dron</h2>
+                <label for="city">Selecciona una ciudad:</label>
+                <select id="city" name="city" required>
+                    <option value="Santo Domingo">Santo Domingo</option>
+                    <option value="New York">New York</option>
+                    <option value="Madrid">Madrid</option>
+                    <option value="Quito">Quito</option>
+                    <option value="Guayaquil">Guayaquil</option>
+                    <option value="Madrid">Madrid</option>
+                    <option value="Tokio">Tokio</option>
+                </select>
+                <div id="weather-data"></div>
             </div>
         </div>
     </main>
@@ -166,28 +175,42 @@
     <script>
         //Funcion para el clima
         const apiKey = 'b230cf925ab7e97c5e787d3097286974';
-        const city = 'Santo Domingo';
-        const weatherApiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-
-        async function getWeather() {
+        async function getWeather(city) {
+            const weatherApiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
             try {
                 const response = await fetch(weatherApiUrl);
                 const data = await response.json();
-                displayWeather(data);
+                if (data.cod === 200) {
+                    displayWeather(data);
+                } else {
+                    throw new Error(data.message);
+                }
             } catch (error) {
                 console.error('Error fetching weather data:', error);
+                displayError(error.message);
             }
         }
-
+        
         function displayWeather(data) {
             const weatherDataDiv = document.getElementById('weather-data');
             weatherDataDiv.innerHTML = `
-            <p><strong>${data.name}</strong></p>
-            <p>Temperatura: ${data.main.temp}°C</p>
-            <p>Condición: ${data.weather[0].description}</p>`;
+                <p><strong>${data.name}, ${data.sys.country}</strong></p>
+                <p>Temperatura: ${data.main.temp}°C</p>
+                <p>Condición: ${data.weather[0].description}</p>`;
         }
-
-        getWeather();
+        
+        function displayError(message) {
+            const weatherDataDiv = document.getElementById('weather-data');
+            weatherDataDiv.innerHTML = `<p>Error: ${message}</p>`;
+        }
+        document.getElementById('city').addEventListener('change', function() {
+            const city = this.value;
+            getWeather(city);
+        });
+        document.addEventListener('DOMContentLoaded', function() {
+            const defaultCity = document.getElementById('city').value;
+            getWeather(defaultCity);
+        });
 
         //Funcion para el accordion
         var acc = document.getElementsByClassName("accordion-section");
