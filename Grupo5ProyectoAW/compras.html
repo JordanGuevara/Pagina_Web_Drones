@@ -104,6 +104,13 @@
         #btn-comprar:hover{
             background-color: #0d1115;
         }
+        #entregado{
+            color:#31a548;
+        }
+
+        #cancelado{
+            color:#dd4141;
+        }
        
     </style>
 </head>
@@ -158,25 +165,68 @@
         <h2>Mis Compras</h2>
 
         <div class="purchase-container">
-            <h5>Drone XYZ</h5>
+            <h5>DJI Mavic 3 </h5>
             <div class="row">
                 <div class="col-md-2 d-flex align-items-center">
                     <img src="img/dron-y-agricultura.jpg" alt="Drone 1" class="purchase-img img-fluid">
                 </div>
                 <div class="col-md-10 purchase-info d-flex flex-column justify-content-center">
-                    <p>Descripción breve del Drone XYZ.</p>
+                    <p>capaz de capturar videos en 5.1K y fotos de 20MP.</p>
                     <p><strong>Cantidad:</strong> 1</p>
                     <p><strong>Fecha de compra:</strong> 2024-07-15</p>
-                    <p class="purchase-status"><strong>Estado:</strong> Entregado</p>
+                    <p class="purchase-status"><strong>Estado:</strong> <span id="entregado">Entregado</span></p>
                     
                 </div>
                 <div class="col-md-2 d-flex flex-column align-items-end justify-content-center">
                     <button id="btn-comprar" class="btn btn-primary mb-2">Ver compra</button>
-                    <button id="btn-cancelar" class="btn btn-danger">Cancelar compra</button>
+                    <button id="btn-cancelar" class="btn btn-danger">Volver a la compra</button>
                 </div>
             </div>
             
         </div>
+
+        <div class="purchase-container">
+            <h5>Autel Robotics EVO II</h5>
+            <div class="row">
+                <div class="col-md-2 d-flex align-items-center">
+                    <img src="img/drones_carreras.jpg" alt="Drone 1" class="purchase-img img-fluid">
+                </div>
+                <div class="col-md-10 purchase-info d-flex flex-column justify-content-center">
+                    <p>cámara de 8K y un tiempo de vuelo de hasta 40 minutos.</p>
+                    <p><strong>Cantidad:</strong> 1</p>
+                    <p><strong>Fecha de compra:</strong> 2024-07-15</p>
+                    <p class="purchase-status"><strong>Estado:</strong> <span id="entregado">En proceso de envío</span></p>
+                    
+                </div>
+                <div class="col-md-2 d-flex flex-column align-items-end justify-content-center">
+                    <button id="btn-comprar" class="btn btn-primary mb-2">Ver compra</button>
+                    <button id="btn-cancelar" class="btn btn-danger">Volver a la compra</button>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="purchase-container"> 
+            <h5>Parrot Anafi </h5>
+            <div class="row">
+                <div class="col-md-2 d-flex align-items-center">
+                    <img src="img/drones_plegables.webp" alt="Drone 1" class="purchase-img img-fluid">
+                </div>
+                <div class="col-md-10 purchase-info d-flex flex-column justify-content-center">
+                    <p>cámara de 21 MP con un zoom óptico de 2.8x y un zoom digital de hasta 14x. </p>
+                    <p><strong>Cantidad:</strong> 1</p>
+                    <p><strong>Fecha de compra:</strong> 2024-07-15</p>
+                    <p class="purchase-status"><strong>Estado:</strong> <span id="cancelado">Cancelado</span></p>
+                    
+                </div>
+                <div class="col-md-2 d-flex flex-column align-items-end justify-content-center">
+                    <button id="btn-comprar" class="btn btn-primary mb-2">Ver compra</button>
+                    <button id="btn-cancelar" class="btn btn-danger">Volver a la compra</button>
+                </div>
+            </div>
+            
+        </div>
+
 
 
             
