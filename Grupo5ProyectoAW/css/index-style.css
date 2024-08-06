@@ -98,6 +98,8 @@ main{
     /* background-image: url(https://www.expocihachub.com/img/blog/aplicaciones-de-drones-en-construccion-uso-de-drones-construc.jpg); */
     min-height: 100vh;
     position: relative;
+    box-shadow: -20px 0 10px 0px rgba(0, 0, 0, 0.8);
+    
 }
 
 video{
@@ -189,15 +191,6 @@ video{
 .btn-shop:hover{
     background-color: #4a474d;
     cursor: pointer;
-}
-.card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-}
-
-.card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
 }
 @keyframes scaleUp {
     from {
