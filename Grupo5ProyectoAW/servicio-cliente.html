@@ -162,50 +162,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
-    <script>
-
-        //Manejo del chat Beast
-        document.addEventListener('DOMContentLoaded', function() {
-            const sendMessageButton = document.getElementById('sendMessage');
-            const messageInput = document.getElementById('messageInput');
-            const chatBody = document.getElementById('chatBody');
-
-            // Función para añadir un mensaje al chat
-            function addMessage(text, isUser) {
-                const messageDiv = document.createElement('div');
-                messageDiv.classList.add('chat-message');
-                if (isUser) {
-                    messageDiv.classList.add('user');
-                } else {
-                    messageDiv.classList.add('system');
-                }
-                messageDiv.innerHTML = `
-                    ${!isUser ? '<img src="img/icono.png" alt="Avatar" class="avatar">' : ''}
-                    <div class="message">${text}</div>
-                `;
-                chatBody.appendChild(messageDiv);
-                chatBody.scrollTop = chatBody.scrollHeight;
-            }
-
-            sendMessageButton.addEventListener('click', function() {
-                const messageText = messageInput.value.trim();
-                if (messageText) {
-                    addMessage(messageText, true); 
-                    messageInput.value = '';
-                    setTimeout(() => {
-                        addMessage('Esta es una respuesta automática.', false);
-                    }, 1000); 
-                }
-            });
-
-            messageInput.addEventListener('keypress', function(e) {
-                if (e.key === 'Enter') {
-                    sendMessageButton.click();
-                }
-            });
-        });
-
-    </script>
+    <script src="js/bot.js"></script>
 </body>
 
 </html>
