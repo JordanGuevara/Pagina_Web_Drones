@@ -45,6 +45,10 @@
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(255, 255, 255, 0.2), 0 0 20px rgba(255, 255, 255, 0.4);
         }
+        .volver{
+            width: 200px;
+            height: 40px;
+        }
     </style>
 </head>
 <body>
@@ -75,10 +79,6 @@
                     </div>
                 </li>
             </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
         </div>
     </nav>
 
@@ -87,8 +87,10 @@
             <div class="col-md-6">
                 <div class="vertical-center">
                     <h2>Nuestra Historia</h2>
-                    <p>Beast Complay fue fundada en 2015 con el objetivo de proporcionar a los clientes la mejor selección de drones en el mercado. Desde entonces, hemos crecido para convertirnos en una de las tiendas de drones en línea más confiables.</p>
+                    <p>Beast Complay fue fundada en 2022 con el objetivo de proporcionar a los clientes la mejor selección de drones en el mercado. Desde entonces, hemos crecido para convertirnos en una de las tiendas de drones en línea más confiables.</p>
+                    <button class="btn btn-primary volver" onclick="volver()">Ver Trabajadores</button>
                 </div>
+                
             </div>
             <div class="col-md-6">
                 <img style="height: 700px; width: 700px;" src="https://th.bing.com/th/id/OIG1.jMo1jwPjVqMnZoUdGtY9?pid=ImgGn" alt="Historia de Beast Complay" class="img-fluid">
@@ -118,6 +120,9 @@
         $(document).ready(function() {
             $('.fade-in').fadeIn(2000); 
         });
+        function volver(){
+            window.location.href = "employees.html";
+        }
     </script>
 </body>
 </html>
