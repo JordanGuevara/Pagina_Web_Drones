@@ -1,0 +1,148 @@
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    background-color: #f8f9fa;
+}
+
+.navbar {
+    background-color: #343a40;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: #fff !important;
+}
+
+.navbar-nav .nav-link {
+    color: #fff !important;
+    margin-right: 10px;
+    transition: color 0.3s;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #17a2b8 !important;
+}
+
+.nav-item .dropdown-menu {
+    background-color: #343a40;
+    border: none;
+}
+
+.dropdown-item {
+    color: #fff !important;
+    transition: background-color 0.3s;
+}
+
+.dropdown-item:hover {
+    background-color: #17a2b8;
+}
+
+.form-inline .form-control {
+    border-radius: 0;
+}
+
+.form-inline .btn {
+    border-radius: 0;
+}
+
+.product {
+    margin-bottom: 30px;
+}
+
+.product h5 {
+    font-weight: bold;
+    color: #343a40;
+}
+
+.product p {
+    margin-bottom: 10px;
+}
+
+.product img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.card {
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.footer {
+    background-color: #343a40;
+    color: #fff;
+    padding: 20px 0;
+    margin-top: 30px;
+}
+
+.footer h5 {
+    font-weight: bold;
+}
+
+.footer a {
+    color: #17a2b8;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.footer .social-icons img {
+    width: 25px;
+    height: auto;
+    margin-right: 10px;
+    transition: transform 0.3s;
+}
+
+.footer .social-icons img:hover {
+    transform: scale(1.2);
+}
+
+.pagination {
+    justify-content: center;
+}
+
+.pagination .page-link {
+    color: #343a40;
+    border-radius: 0;
+}
+
+.pagination .page-link:hover {
+    background-color: #17a2b8;
+    color: #fff;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: #17a2b8;
+    border-color: #17a2b8;
+}
+
+@media (max-width: 768px) {
+    .navbar-nav {
+        text-align: center;
+    }
+    
+    .navbar-nav .nav-link {
+        margin-bottom: 10px;
+    }
+    
+    .form-inline {
+        display: block;
+        text-align: center;
+    }
+    
+    .form-inline .form-control,
+    .form-inline .btn {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}

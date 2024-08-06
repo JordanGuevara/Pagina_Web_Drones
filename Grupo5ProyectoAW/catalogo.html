@@ -3,57 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BeastBoy Catalog</title>
+    <title>Catalogo</title>
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/bootstrap-grid.css">
     <link rel="stylesheet" href="css/bootstrap-reboot.css">
+    <link rel="stylesheet" href="css/style.css"> <!-- Enlace al nuevo archivo de estilo -->
     <link rel="icon" href="img/icono.png" type="image/png">
-    <style>
-        .product {
-            margin-bottom: 30px;
-        }
-        .product img {
-            width: 100%;
-            height: auto;
-        }
-        .pagination {
-            justify-content: center;
-        }
-        footer {
-            background-color: #000;
-            color: #fff;
-            padding: 20px 0;
-            text-align: center;
-        }
-        footer a {
-            color: #fff;
-            text-decoration: none;
-        }
-        footer a:hover {
-            text-decoration: underline;
-        }
-        footer .social-icons img {
-            width: 25px;
-            height: auto;
-            margin: 0 10px;
-        }
-    </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="index.html">BeastBoy</a>
+        <a class="navbar-brand" href="index.html">Beast Complay</a>
         <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
             aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation"></button>
         <div class="collapse navbar-collapse" id="collapsibleNavId">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                 <li class="nav-item active">
-                    <a class="nav-link" href="catalogo.html">Catálogo <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="catalogo.html">Catálogo<span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="nosotros.html">Sobre Nosotros</a>
+                <li class="nav-item active ">
+                    <a class="nav-link" href="nosotros.html">Sobre Nosotros<span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="blog.html">Blog</a>
+                <li class="nav-item active">
+                    <a class="nav-link" href="blog.html">Blog<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown"
+                        aria-haspopup="false" aria-expanded="true">
+                        <img src="img/avatar.png" alt="" style="width: 25px; height:25px;">
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownId">
+                        <a class="dropdown-item" href="perfil.html">Perfil</a>
+                        <a class="dropdown-item" href="servicio-cliente.html">Soporte Técnico</a>
+                        <a class="dropdown-item" href="carrito.html">Ver Carrito</a>
+                        <a class="dropdown-item" href="compras.html">Ver Compras</a>
+                        <a class="dropdown-item" href="login.html">Cerrar Sesión</a>
+                    </div>
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
@@ -63,107 +47,131 @@
         </div>
     </nav>
 
-    <div class="container mt-5">
+    <div class="container mt-4">
         <div class="row">
-            <div class="col-md-6 product">
-                <div class="card">
-                    <img src="https://m.media-amazon.com/images/I/71w+lkB++rL._AC_SL1500_.jpg" class="card-img-top" alt="Dron con cámara, cuadricóptero RC plegable 1080P HD FPV">
-                    <div class="card-body">
-                        <h5 class="card-title">Dron con cámara, cuadricóptero RC plegable 1080P HD FPV - $39,99</h5>
-                        <p class="card-text"><strong>Estilo:</strong> TRAC A4</p>
-                        <p class="card-text"><strong>Marca:</strong> Nombre del modelo</p>
-                        <p class="card-text"><strong>Características especiales:</strong> Bedroid Flight Time, 360 Degree Flip, Speed Adjustment, Auto-Landing, First Person View (FPV)</p>
-                        <p class="card-text"><strong>Rango de edad (recomendado):</strong> Adulto</p>
-                        <p class="card-text"><strong>Peso del artículo:</strong> 915 g aux</p>
-                        <p class="card-text"><strong>Resolución de la captura de video:</strong> 1080p</p>
-                        <p class="card-text"><strong>Tecnología de comunicación inalámbrica:</strong> WiFi</p>
-                        <p class="card-text"><strong>Nivel de habilidad:</strong> Principiante</p>
-                        <p class="card-text"><strong>Capacidad:</strong> 2000 Milamperios Hora</p>
-                        <p class="card-text"><strong>Tipo de control:</strong> Control de gestos</p>
+            <div class="col-md-6 mb-4">
+                <div class="card product">
+                    <div class="row no-gutters">
+                        <div class="col-md-4">
+                            <img src="https://m.media-amazon.com/images/I/71X-g5cgoRL._AC_SL1500_.jpg" class="card-img" alt="Drone con cámara, cuadricóptero RC plegable 1080P HD FPV">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">Drone con cámara, cuadricóptero RC plegable 1080P HD FPV - $39,99</h5>
+                                <p class="card-text">Estilo: TRAC A4</p>
+                                <p class="card-text">Nombre del modelo: TRAC A4</p>
+                                <p class="card-text">Características especiales: Bended Flight Time, 360 Degree Flip, Speed Adjustment, Auto-Landing, First Person View (FPV)</p>
+                                <p class="card-text">Rango de edad (recomendación): Adulto</p>
+                                <p class="card-text">Peso del artículo: 6.5 onz</p>
+                                <p class="card-text">Resolución de la captura de video: 1080p</p>
+                                <p class="card-text">Tecnología de conectividad: WiFi</p>
+                                <p class="card-text">Nivel de habilidad: Principiante</p>
+                                <p class="card-text">Capacidad: 2000 Miliamperios Hora</p>
+                                <p class="card-text">Tipo de control: Control de gestos</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 product">
-                <div class="card">
-                    <img src="https://m.media-amazon.com/images/I/71X-g5cgoRL._AC_SL1500_.jpg" class="card-img-top" alt="Dron con cámara para adultos, 1080P HD Mini FPV">
-                    <div class="card-body">
-                        <h5 class="card-title">Dron con cámara para adultos, 1080P HD Mini FPV - $79</h5>
-                        <p class="card-text"><strong>Color:</strong> Negro</p>
-                        <p class="card-text"><strong>Resolución de la captura de video:</strong> 1080p</p>
-                        <p class="card-text"><strong>Tecnología de conectividad:</strong> SD</p>
-                        <p class="card-text"><strong>Tipo de material:</strong> Plástico</p>
-                        <p class="card-text"><strong>Tecnología de comunicación inalámbrica:</strong> Wi-Fi</p>
+
+            <div class="col-md-6 mb-4">
+                <div class="card product">
+                    <div class="row no-gutters">
+                        <div class="col-md-4">
+                            <img src="https://m.media-amazon.com/images/I/611n0AbvSNL._AC_SL1200_.jpg" class="card-img" alt="Drone motor sin escobillas">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">Drone motor sin escobillas - $99,99</h5>
+                                <p class="card-text">Marca: CHUBORY</p>
+                                <p class="card-text">Nombre del modelo: a77</p>
+                                <p class="card-text">Color: Azul marino</p>
+                                <p class="card-text">Tecnología de conectividad: WiFi</p>
+                                <p class="card-text">Peso del artículo: 180 Gramos</p>
+                                <p class="card-text">Capacidad: 2000 Miliamperios Hora</p>
+                                <p class="card-text">Composición de las celdas de la batería: Ion de Litio</p>
+                                <p class="card-text">¿Incluye batería?: Sí</p>
+                                <p class="card-text">Dimensiones del artículo: 4.72"Largo x 2.95"Ancho x 1.96"Altura pulgadas</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 product">
-                <div class="card">
-                    <img src="https://m.media-amazon.com/images/I/71XF4Im4MGL._AC_SL1500_.jpg" class="card-img-top" alt="Dron motor sin escobillas">
-                    <div class="card-body">
-                        <h5 class="card-title">Dron motor sin escobillas - $99,99</h5>
-                        <p class="card-text"><strong>Marca:</strong> CHUBORY</p>
-                        <p class="card-text"><strong>Nombre del modelo:</strong> a77</p>
-                        <p class="card-text"><strong>Color:</strong> Azul marino</p>
-                        <p class="card-text"><strong>Tecnología de conectividad:</strong> WiFi</p>
-                        <p class="card-text"><strong>Peso del artículo:</strong> 180 Gramos</p>
-                        <p class="card-text"><strong>Capacidad:</strong> 2000 Milamperios Hora</p>
-                        <p class="card-text"><strong>Composición de las celdas de la batería:</strong> Ion de Litio</p>
-                        <p class="card-text"><strong>¿Incluye batería?</strong> Sí</p>
-                        <p class="card-text"><strong>Dimensiones del artículo:</strong> 4.72"Largo x 2.95"Ancho x 1.96"Altura pulgadas</p>
+
+            <div class="col-md-6 mb-4">
+                <div class="card product">
+                    <div class="row no-gutters">
+                        <div class="col-md-4">
+                            <img src="https://m.media-amazon.com/images/I/71XF4Im4MGL._AC_SL1500_.jpg" class="card-img" alt="Dron con cámara para adultos, 1080P HD Mini FPV">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">Dron con cámara para adultos, 1080P HD Mini FPV - $79</h5>
+                                <p class="card-text">Color: Negro</p>
+                                <p class="card-text">Resolución de la captura de video: 1080p</p>
+                                <p class="card-text">Tecnología de conectividad: SD</p>
+                                <p class="card-text">Tipo de control: Control Remoto</p>
+                                <p class="card-text">Material: Plástico</p>
+                                <p class="card-text">Tecnología de comunicación inalámbrica: Wi-Fi</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 product">
-                <div class="card">
-                    <img src="https://m.media-amazon.com/images/I/710byJlY12L._AC_SL1500_.jpg" class="card-img-top" alt="Dron S350 con cámara">
-                    <div class="card-body">
-                        <h5 class="card-title">Dron S350 con cámara - $56</h5>
-                        <p class="card-text"><strong>Marca:</strong> SOOTONG</p>
-                        <p class="card-text"><strong>Nombre del modelo:</strong> S350</p>
-                        <p class="card-text"><strong>Características especiales:</strong> Retención de altitud, Video de 360 grados, Vista en primera persona (FPV), Giro de 360 grados, Ajuste de velocidad, Un soporte de llave despegue</p>
-                        <p class="card-text"><strong>Rango de edad (recomendado):</strong> Adulto</p>
-                        <p class="card-text"><strong>Color:</strong> Negro</p>
-                        <p class="card-text"><strong>Resolución de la captura de video:</strong> 1280x720P en captura de video, 1920x1080P en la lente de Capture</p>
-                        <p class="card-text"><strong>Componentes incluidos:</strong> Mando a distancia, mando a distancia, 2 Baterías, 2 palas, Cargador USB, Dron S350, Estuche de transporte</p>
-                        <p class="card-text"><strong>Nivel de habilidad:</strong> Principiante</p>
-                        <p class="card-text"><strong>Peso del artículo:</strong> 612 Gramos</p>
+
+            <div class="col-md-6 mb-4">
+                <div class="card product">
+                    <div class="row no-gutters">
+                        <div class="col-md-4">
+                            <img src="https://m.media-amazon.com/images/I/710byJlY12L._AC_SL1500_.jpg" class="card-img" alt="Dron S350 con cámara">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">Dron S350 con cámara - $56</h5>
+                                <p class="card-text">Marca: SOTONG</p>
+                                <p class="card-text">Nombre del modelo: S350</p>
+                                <p class="card-text">Características especiales: Retención de altitud, Video de 360 grados, Vista en primera persona (FPV), Giro de 360 grados, Ajuste de velocidad, Luz soporte de teléfono</p>
+                                <p class="card-text">Rango de edad (recomendación): Adulto</p>
+                                <p class="card-text">Color: Negro</p>
+                                <p class="card-text">Resolución de la captura de video: 1280x720p en video, 1920x1080P en lente de Capture</p>
+                                <p class="card-text">Tecnología de conectividad: SD</p>
+                                <p class="card-text">Componentes incluidos: Manual de usuario, mando a distancia, 2 baterías, 2 pilas, Cargador USB, Dron S350, Estuche de transporte</p>
+                                <p class="card-text">Peso del artículo: 622 Gramos</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
+            </div>
+
+            <!-- Paginación -->
+            <div class="col-12">
+                <nav aria-label="Page navigation">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                    </ul>
+                </nav>
             </div>
         </div>
-        <nav aria-label="Page navigation example">
-            <ul class="pagination">
-                <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item"><a class="page-link" href="#">Next</a></li>
-            </ul>
-        </nav>
     </div>
 
-    <footer class="mt-5">
+    <footer class="footer mt-4">
         <div class="container">
             <div class="row">
-                <div class="col-md-4">
-                    <h5>BeastBoy</h5>
-                    <p>Contact us at <a href="mailto:support@beastboy.com">support@beastboy.com</a></p>
+                <div class="col-md-6">
+                    <h5>Beast Complay</h5>
+                    <p>&copy; 2024. Todos los derechos reservados.</p>
                 </div>
-                <div class="col-md-4">
-                    <h5>Follow Us</h5>
+                <div class="col-md-6 text-md-right">
+                    <h5>Redes Sociales</h5>
                     <div class="social-icons">
                         <a href="#"><img src="img/facebook.png" alt="Facebook"></a>
                         <a href="#"><img src="img/twitter.png" alt="Twitter"></a>
                         <a href="#"><img src="img/instagram.png" alt="Instagram"></a>
                     </div>
-                </div>
-                <div class="col-md-4">
-                    <h5>Links</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="catalogo.html">Catálogo</a></li>
-                        <li><a href="nosotros.html">Sobre Nosotros</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                    </ul>
                 </div>
             </div>
         </div>
@@ -171,5 +179,22 @@
 
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.js"></script>
+    <script>
+        // Script jQuery para animaciones
+        $(document).ready(function() {
+            $('.product').hover(
+                function() {
+                    $(this).addClass('shadow-lg').css('cursor', 'pointer');
+                }, function() {
+                    $(this).removeClass('shadow-lg');
+                }
+            );
+
+            $('.navbar-nav .nav-link').on('click', function() {
+                $('.navbar-nav .nav-link.active').removeClass('active');
+                $(this).addClass('active');
+            });
+        });
+    </script>
 </body>
 </html>
