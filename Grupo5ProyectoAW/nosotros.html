@@ -45,6 +45,10 @@
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(255, 255, 255, 0.2), 0 0 20px rgba(255, 255, 255, 0.4);
         }
+        .volver{
+            width: 200px;
+            height: 40px;
+        }
     </style>
 </head>
 <body>
@@ -84,7 +88,9 @@
                 <div class="vertical-center">
                     <h2>Nuestra Historia</h2>
                     <p>Beast Complay fue fundada en 2022 con el objetivo de proporcionar a los clientes la mejor selección de drones en el mercado. Desde entonces, hemos crecido para convertirnos en una de las tiendas de drones en línea más confiables.</p>
+                    <button class="btn btn-primary volver" onclick="volver()">Ver Trabajadores</button>
                 </div>
+                
             </div>
             <div class="col-md-6">
                 <img style="height: 700px; width: 700px;" src="https://static.vecteezy.com/system/resources/previews/021/503/946/non_2x/modern-drone-illustration-logo-vector.jpg" alt="Historia de Beast Complay" class="img-fluid">
@@ -114,6 +120,9 @@
         $(document).ready(function() {
             $('.fade-in').fadeIn(2000); 
         });
+        function volver(){
+            window.location.href = "employees.html";
+        }
     </script>
 </body>
 </html>
