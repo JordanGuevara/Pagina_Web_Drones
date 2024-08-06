@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ventas en Espera</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-grid.css">
+    <link rel="stylesheet" href="css/bootstrap-reboot.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Beast Complay</a>
+        <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+            aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation"></button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                    <a class="nav-link" href="catalogo.html">Catálogo<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active ">
+                    <a class="nav-link" href="nosotros.html">Sobre Nosotros<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="blog.html">Blog<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown"
+                        aria-haspopup="false" aria-expanded="true">
+                        <img src="img/avatar.png" alt="" style="width: 25px; height:25px;">
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownId">
+                        <a class="dropdown-item" href="perfil.html">Perfil</a>
+                        <a class="dropdown-item" href="servicio-cliente.html">Soporte Técnico</a>
+                        <a class="dropdown-item" href="carrito.html">Ver Carrito</a>
+                        <a class="dropdown-item" href="compras.html">Ver Compras</a>
+                        <a class="dropdown-item" href="login.html">Cerrar Sesión</a>
+                    </div>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h1>Ventas en Espera</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Producto</th>
+                    <th scope="col">Cantidad</th>
+                    <th scope="col">Fecha de Pedido</th>
+                    <th scope="col">Fecha de Entrega</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>DJI 3 DRON</td>
+                    <td>2</td>
+                    <td>01/08/2024</td>
+                    <td>En Espera</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>MAVIC 2 PRO</td>
+                    <td>1</td>
+                    <td>02/08/2024</td>
+                    <td>En Espera</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <footer class="footer mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Services</h5>
+                    <ul>
+                        <li><a href="#">Bonus program</a></li>
+                        <li><a href="#">Gift cards</a></li>
+                        <li><a href="#">Credit and payment</a></li>
+                        <li><a href="#">Service contracts</a></li>
+                        <li><a href="#">Non-cash account</a></li>
+                        <li><a href="#">Payment</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Assistance to the buyer</h5>
+                    <ul>
+                        <li><a href="#">Find an order</a></li>
+                        <li><a href="#">Terms of delivery</a></li>
+                        <li><a href="#">Exchange and return of goods</a></li>
+                        <li><a href="#">Guarantee</a></li>
+                        <li><a href="#">Frequently asked questions</a></li>
+                        <li><a href="#">Terms of use of the site</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Follow us</h5>
+                    <ul class="list-unstyled d-flex">
+                        <li><a href="#" class="mr-3"><i class="fab fa-facebook"></i></a></li>
+                        <li><a href="#" class="mr-3"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#" class="mr-3"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="#" class="mr-3"><i class="fab fa-linkedin"></i></a></li>
+                        <li><a href="#" class="mr-3"><i class="fab fa-youtube"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/bootstrap.bundle.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Highlight row on hover
+            $('table tbody tr').hover(
+                function() {
+                    $(this).addClass('table-active');
+                },
+                function() {
+                    $(this).removeClass('table-active');
+                }
+            );
+    
+            // Show alert on table row click
+            $('table tbody tr').on('click', function() {
+                var orderId = $(this).find('td:eq(0)').text();
+                alert('Pedido en espera: ' + orderId);
+            });
+        });
+    </script>
+    
+</body>
+</html>
