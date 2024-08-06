@@ -7,7 +7,55 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/bootstrap-grid.css">
     <link rel="stylesheet" href="css/bootstrap-reboot.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="img/icono.png" type="image/png">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .sidebar {
+            background-color: #343a40;
+            color: #fff;
+            padding: 15px;
+        }
+        .sidebar a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .sidebar a:hover {
+            text-decoration: underline;
+        }
+        .shopping-cart {
+            padding: 30px;
+        }
+        .shopping-cart img {
+            max-width: 100px;
+        }
+        .order-summary {
+            border: 1px solid #ddd;
+            padding: 20px;
+            background-color: #fff;
+        }
+        .footer {
+            background-color: #343a40;
+            color: #fff;
+            padding: 20px;
+        }
+        .footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        .animated {
+            transition: transform 0.2s;
+        }
+        .animated:hover {
+            transform: scale(1.05);
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -45,8 +93,149 @@
             </form>
         </div>
     </nav>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2 sidebar">
+                <h4>Products</h4>
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Mis productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Catálogos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">En espera</a>
+                    </li>
+                </ul>
+                <h4>Sales</h4>
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Ventas realizadas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Ventas en espera</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-7 shopping-cart">
+                <h2>Shopping Cart</h2>
+                <div class="d-flex align-items-center animated">
+                    <img src="https://m.media-amazon.com/images/I/71wfT6VKV8L._AC_SL1500_.jpg" alt="DJI 3 DRON">
+                    <div class="ml-3">
+                        <h5>DJI 3 DRON</h5>
+                    </div>
+                    <div class="ml-auto">
+                        <input type="number" value="1" min="1" class="form-control">
+                        <button class="btn btn-danger">X</button>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center animated mt-3">
+                    <img src="https://m.media-amazon.com/images/I/71wfT6VKV8L._AC_SL1500_.jpg" alt="DJI 3 DRON">
+                    <div class="ml-3">
+                        <h5>DJI 3 DRON</h5>
+                    </div>
+                    <div class="ml-auto">
+                        <input type="number" value="1" min="1" class="form-control">
+                        <button class="btn btn-danger">X</button>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center animated mt-3">
+                    <img src="https://m.media-amazon.com/images/I/41yafb6F+VL._AC_SL1000_.jpg" alt="MAVIC 2 PRO">
+                    <div class="ml-3">
+                        <h5>MAVIC 2 PRO</h5>
+                    </div>
+                    <div class="ml-auto">
+                        <input type="number" value="1" min="1" class="form-control">
+                        <button class="btn btn-danger">X</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 order-summary">
+                <h3>Order Summary</h3>
+                <div class="form-group">
+                    <label for="promoCode">Discount code / Promo code</label>
+                    <input type="text" id="promoCode" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="bonusCardNumber">Your bonus card number</label>
+                    <input type="text" id="bonusCardNumber" class="form-control">
+                </div>
+                <button class="btn btn-primary btn-block">Apply</button>
+                <hr>
+                <p>Subtotal: <span class="float-right">$2347</span></p>
+                <p>Estimated Tax: <span class="float-right">$50</span></p>
+                <p>Estimated Shipping & Handling: <span class="float-right">$29</span></p>
+                <h4>Total: <span class="float-right">$2426</span></h4>
+                <button class="btn btn-dark btn-block">Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Services</h5>
+                    <ul>
+                        <li><a href="#">Bonus program</a></li>
+                        <li><a href="#">Gift cards</a></li>
+                        <li><a href="#">Credit and payment</a></li>
+                        <li><a href="#">Service contracts</a></li>
+                        <li><a href="#">Non-cash account</a></li>
+                        <li><a href="#">Payment</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Assistance to the buyer</h5>
+                    <ul>
+                        <li><a href="#">Find an order</a></li>
+                        <li><a href="#">Terms of delivery</a></li>
+                        <li><a href="#">Exchange and return of goods</a></li>
+                        <li><a href="#">Guarantee</a></li>
+                        <li><a href="#">Frequently asked questions</a></li>
+                        <li><a href="#">Terms of use of the site</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Follow us</h5>
+                    <ul class="list-unstyled d-flex">
+                        <li><a href="#" class="mr-3"><i class="fab fa-facebook"></i></a></li>
+                        <li><a href="#" class="mr-3"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#" class="mr-3"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="#" class="mr-3"><i class="fab fa-linkedin"></i></a></li>
+                        <li><a href="#" class="mr-3"><i class="fab fa-youtube"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/bootstrap.bundle.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.btn-danger').click(function() {
+                $(this).closest('.d-flex').remove();
+            });
+
+            $('.form-control').on('change', function() {
+                let subtotal = 0;
+                $('.d-flex').each(function() {
+                    let price = parseFloat($(this).find('.price').text().replace('$', ''));
+                    let quantity = parseInt($(this).find('input[type="number"]').val());
+                    subtotal += price * quantity;
+                });
+                $('#subtotal').text('$' + subtotal.toFixed(2));
+                let tax = subtotal * 0.05;
+                $('#tax').text('$' + tax.toFixed(2));
+                let shipping = 29;
+                $('#shipping').text('$' + shipping.toFixed(2));
+                $('#total').text('$' + (subtotal + tax + shipping).toFixed(2));
+            });
+        });
+    </script>
 </body>
 </html>
