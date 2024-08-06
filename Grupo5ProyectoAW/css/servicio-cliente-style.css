@@ -1,3 +1,12 @@
+
+body {
+    margin-top: 56px;
+}
+
+.navbar {
+    z-index: 1030;
+}
+
 #responsive-image {
     width: 100%;
     height: auto;

@@ -1,0 +1,109 @@
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; 
+    padding: 20px;
+    color: white;
+    background-color: black;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.inf {
+    flex: 1; 
+    margin: 0 10px;
+}
+
+.inf h2,.inf h4 {
+    margin: 0 0 10px;
+}
+
+.inf p {
+    margin: 0 0 5px;
+    
+}
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+main {
+    margin-top: 20px;
+}
+
+article {
+    margin-bottom: 30px;
+}
+
+#comments-section {
+    margin-top: 30px;
+}
+
+#rating-container {
+    background: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+#average-rating {
+    font-size: 1.5em;
+    color: #f39c12;
+}
+
+.comment {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.comment img {
+    border-radius: 50%;
+    float: left;
+    margin-right: 10px;
+}
+
+.comment p {
+    margin: 0;
+}
+
+.rating {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #f39c12;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9em;
+}
+
+button {
+    background: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background: #555;
+}

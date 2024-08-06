@@ -190,3 +190,16 @@ video{
     background-color: #4a474d;
     cursor: pointer;
 }
+@keyframes scaleUp {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+.scale-up {
+    animation: scaleUp 1s ease-in-out;
+}

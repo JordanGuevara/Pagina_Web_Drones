@@ -44,7 +44,10 @@ main {
     margin: 10px 0;
     font-size: 18px;
 }
-
+.user-card h3 {
+    margin: 8px 0;
+    font-size: 15px;
+}
 .user-card p {
     margin: 5px 0;
     color: #333;
