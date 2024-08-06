@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,108 +13,122 @@
         body {
             background-color: white;
             color: black;
-            padding-top: 70px; /* Espacio para el encabezado fijo */
+            padding-top: 70px;
         }
+
         .sidebar {
             position: fixed;
             top: 0;
-            left: -250px; /* Oculto inicialmente */
+            left: -250px;
             width: 250px;
             height: 100%;
             background-color: #343a40;
             transition: left 0.3s;
-            padding-top: 60px; /* Espacio para el encabezado */
-            z-index: 1000; /* Asegura que esté encima del contenido principal */
+            padding-top: 60px;
+            z-index: 1000;
         }
+
         .sidebar a {
             color: white;
             padding: 10px 15px;
             text-decoration: none;
             display: block;
         }
+
         .sidebar a:hover {
             background-color: #495057;
         }
+
         .menu-icon {
             position: absolute;
             left: 10px;
-            top: 60px; /* Justo debajo del encabezado */
+            top: 60px;
             cursor: pointer;
             color: #343a40;
             font-size: 24px;
-            z-index: 1001; /* Asegura que esté encima del encabezado */
+            z-index: 1001;
         }
+
         .menu-icon:hover {
             color: #495057;
         }
+
         .menu-container {
             position: fixed;
             top: 0;
             left: 0;
-            width: 40px; /* Espacio sensible al pasar el mouse */
+            width: 40px;
             height: 100%;
-            z-index: 1001; /* Asegura que esté encima del encabezado */
+            z-index: 1001;
         }
+
         .menu-container:hover .sidebar {
-            left: 0; /* Muestra el menú al pasar el mouse */
+            left: 0;
         }
+
         .purchase-container {
             margin: 20px;
             border: 1px solid #ddd;
             padding: 15px;
             border-radius: 5px;
             background-color: #f8f9fa;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        .purchase-img {
-    width: 200px; 
-    height: 140px; 
-    object-fit: cover;
-    margin-right: 15px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.6);
-}
 
-.purchase-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    text-align: left;
-    flex: 1; 
-}
+        .purchase-img {
+            width: 200px;
+            height: 140px;
+            object-fit: cover;
+            margin-right: 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+        }
+
+        .purchase-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            text-align: left;
+            flex: 1;
+        }
 
         .purchase-status {
             font-weight: bold;
         }
-        #btn-cancelar{
+
+        #btn-cancelar {
             background-color: #4f4545;
-            
+
             border: none;
             width: 160px;
             border-radius: 10px;
-        }
-        #btn-cancelar:hover{
-            background-color: #0d1115;
-        }
-        #btn-comprar{
-            background-color: #4f4545;
-            border: none;
-            width: 160px;
-            border-radius: 10px;
-        }
-        #btn-comprar:hover{
-            background-color: #0d1115;
-        }
-        #entregado{
-            color:#31a548;
         }
 
-        #cancelado{
-            color:#dd4141;
+        #btn-cancelar:hover {
+            background-color: #0d1115;
         }
-       
+
+        #btn-comprar {
+            background-color: #4f4545;
+            border: none;
+            width: 160px;
+            border-radius: 10px;
+        }
+
+        #btn-comprar:hover {
+            background-color: #0d1115;
+        }
+
+        #entregado {
+            color: #31a548;
+        }
+
+        #cancelado {
+            color: #dd4141;
+        }
     </style>
 </head>
+
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <a class="navbar-brand" href="index.html">Beast Complay</a>
@@ -143,7 +158,7 @@
                     </div>
                 </li>
             </ul>
-            
+
         </div>
     </nav>
 
@@ -169,14 +184,14 @@
                     <p><strong>Cantidad:</strong> 1</p>
                     <p><strong>Fecha de compra:</strong> 2024-07-15</p>
                     <p class="purchase-status"><strong>Estado:</strong> <span id="entregado">Entregado</span></p>
-                    
+
                 </div>
                 <div class="col-md-2 d-flex flex-column align-items-end justify-content-center">
                     <button id="btn-comprar" class="btn btn-primary mb-2">Ver compra</button>
                     <button id="btn-cancelar" class="btn btn-danger">Volver a la compra</button>
                 </div>
             </div>
-            
+
         </div>
 
         <div class="purchase-container">
@@ -189,18 +204,19 @@
                     <p>cámara de 8K y un tiempo de vuelo de hasta 40 minutos.</p>
                     <p><strong>Cantidad:</strong> 1</p>
                     <p><strong>Fecha de compra:</strong> 2024-07-15</p>
-                    <p class="purchase-status"><strong>Estado:</strong> <span id="entregado">En proceso de envío</span></p>
-                    
+                    <p class="purchase-status"><strong>Estado:</strong> <span id="entregado">En proceso de envío</span>
+                    </p>
+
                 </div>
                 <div class="col-md-2 d-flex flex-column align-items-end justify-content-center">
                     <button id="btn-comprar" class="btn btn-primary mb-2">Ver compra</button>
                     <button id="btn-cancelar" class="btn btn-danger">Volver a la compra</button>
                 </div>
             </div>
-            
+
         </div>
 
-        <div class="purchase-container"> 
+        <div class="purchase-container">
             <h5>Parrot Anafi </h5>
             <div class="row">
                 <div class="col-md-2 d-flex align-items-center">
@@ -211,22 +227,22 @@
                     <p><strong>Cantidad:</strong> 1</p>
                     <p><strong>Fecha de compra:</strong> 2024-07-15</p>
                     <p class="purchase-status"><strong>Estado:</strong> <span id="cancelado">Cancelado</span></p>
-                    
+
                 </div>
                 <div class="col-md-2 d-flex flex-column align-items-end justify-content-center">
                     <button id="btn-comprar" class="btn btn-primary mb-2">Ver compra</button>
                     <button id="btn-cancelar" class="btn btn-danger">Volver a la compra</button>
                 </div>
             </div>
-            
+
         </div>
 
 
 
-            
-        </div>
 
-       
+    </div>
+
+
 
     </div>
 
@@ -234,4 +250,5 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
+
 </html>
