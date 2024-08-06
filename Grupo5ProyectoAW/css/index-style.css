@@ -98,6 +98,7 @@ main{
     /* background-image: url(https://www.expocihachub.com/img/blog/aplicaciones-de-drones-en-construccion-uso-de-drones-construc.jpg); */
     min-height: 100vh;
     position: relative;
+    box-shadow: -20px 0 25px -5px rgba(0, 0, 0, 0.5);
 }
 
 video{
