@@ -8,6 +8,61 @@
     <link rel="stylesheet" href="css/bootstrap-grid.css">
     <link rel="stylesheet" href="css/bootstrap-reboot.css">
     <link rel="icon" href="img/icono.png" type="image/png">
+    <style>
+         .fade-in {
+            display: none;
+        }
+        .vertical-center {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+        }
+        .fondo-vision {
+            background: black;
+            color: white;
+            position: relative;
+            padding: 2rem;
+            margin-top: 2rem;
+            width: 100%;
+            padding-left: 0;
+            padding-right: 0;
+            margin-left: 0;
+            margin-right: 0;
+        }
+        .fondo-vision::before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: -20px;
+            left: 0;
+            width: 100%;
+            height: 20px;
+            background-size: 40px 20px;
+        }
+        .fondo-vision img{
+            margin-left: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2), 0 0 20px rgba(255, 255, 255, 0.4);
+        }
+        .volver{
+            width: 200px;
+            height: 40px;
+        }
+
+        button{
+            background-color: #e7e8e8 ;
+            color: rgb(0, 0, 0);
+            border: none;
+            border-radius: 10px;
+           
+        }
+        button:hover{
+            background-color: #14171e ;
+            color: white;
+            
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -37,45 +92,50 @@
                     </div>
                 </li>
             </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
         </div>
     </nav>
 
-    <!-- Contenido principal -->
-    <div class="container py-5">
-        <h1 class="text-center">Sobre Nosotros</h1>
-        <p class="text-center">Conoce más sobre Beast Complay, la tienda de drones en línea más confiable</p>
-
+    <div class="container-fluid fade-in">
         <div class="row py-3">
-            <div class="col-md-6 flex-column justify-content-center">
-                <h2>Nuestra Historia</h2>
-                <p>Beast Complay fue fundada en 2015 con el objetivo de proporcionar a los clientes la mejor selección de drones en el mercado. Desde entonces, hemos crecido para convertirnos en una de las tiendas de drones en línea más confiables.</p>
+            <div class="col-md-6">
+                <div class="vertical-center">
+                    <h2>Nuestra Historia</h2>
+                    <p>Beast Complay fue fundada en 2022 con el objetivo de proporcionar a los clientes la mejor selección de drones en el mercado. Desde entonces, hemos crecido para convertirnos en una de las tiendas de drones en línea más confiables.</p>
+                    <button class="btn  volver" onclick="volver()">Ver Trabajadores</button>
+                </div>
+                
             </div>
             <div class="col-md-6">
-                <img style="height: 700px; width: 700px;" src="https://static.vecteezy.com/system/resources/previews/021/503/946/non_2x/modern-drone-illustration-logo-vector.jpg" alt="Historia de Beast Complay" class="img-fluid">
+                <img style="height: 700px; width: 700px;" src="https://th.bing.com/th/id/OIG1.jMo1jwPjVqMnZoUdGtY9?pid=ImgGn" alt="Historia de Beast Complay" class="img-fluid">
             </div>
         </div>
         
-        <!-- Sección de misión y visión -->
         <div class="row py-3">
-            <div class="col-md-6">
-                <img style="height: 500px; width: 700px;" src=" https://cursodedrones.es/wp-content/uploads/2021/10/ideas-de-negocio-con-tu-dron-portada-cursodedrones.jpg" alt="Misión y Visión de Beast Complay" class="img-fluid">
-            </div>
-            <div class="col-md-6 flex-column justify-content-center ">
-                <h2>Misión y Visión</h2>
-                <p>Nuestra misión es proporcionar a los clientes la mejor experiencia de compra en línea, con una amplia selección de drones y un servicio al cliente excepcional. Nuestra visión es ser la tienda de drones en línea más grande y confiable del mundo.</p>
+            <div class="col-md-12 fondo-vision">
+                <div class="row">
+                    <div class="col-md-6">
+                        <img style="height: 500px; width: 100%;" src="https://cursodedrones.es/wp-content/uploads/2021/10/ideas-de-negocio-con-tu-dron-portada-cursodedrones.jpg" alt="Misión y Visión de Beast Complay" class="img-fluid">
+                    </div>
+                    <div class="col-md-6 vertical-center">
+                        <h2>Misión y Visión</h2>
+                        <p>Nuestra misión es proporcionar a los clientes la mejor experiencia de compra en línea, con una amplia selección de drones y un servicio al cliente excepcional. Nuestra visión es ser la tienda de drones en línea más grande y confiable del mundo.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-       
-
-
-        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
-    </body>
-    </html>  
+    <script>
+        $(document).ready(function() {
+            $('.fade-in').fadeIn(2000); 
+        });
+        function volver(){
+            window.location.href = "employees.html";
+        }
+    </script>
+</body>
+</html>
