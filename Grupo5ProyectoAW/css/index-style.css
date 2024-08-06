@@ -192,6 +192,7 @@ video{
     background-color: #4a474d;
     cursor: pointer;
 }
+
 @keyframes scaleUp {
     from {
         transform: scale(0.9);
