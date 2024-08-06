@@ -121,7 +121,7 @@
     <script src="js/main.js"></script>
     <script>
         $(document).ready(function() {
-            // Highlight row on hover
+            //resalltar al pasar maus
             $('table tbody tr').hover(
                 function() {
                     $(this).addClass('table-active');
@@ -131,7 +131,7 @@
                 }
             );
     
-            // Show alert on table row click
+            // Mostrar detalles al hacer clic en la fila de la tabla
             $('table tbody tr').on('click', function() {
                 var product = $(this).find('td:eq(0)').text();
                 alert('Producto: ' + product + ' en espera.');

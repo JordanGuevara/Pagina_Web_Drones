@@ -121,7 +121,7 @@
     <script src="js/main.js"></script>
     <script>
         $(document).ready(function() {
-            // Highlight row on hover
+            // resalltar al pasar maus
             $('table tbody tr').hover(
                 function() {
                     $(this).addClass('table-active');
@@ -131,7 +131,7 @@
                 }
             );
     
-            // Show details on table row click
+            // mostar detalles con un click
             $('table tbody tr').on('click', function() {
                 var orderId = $(this).find('td:eq(0)').text();
                 alert('Detalles de la venta realizada: ' + orderId);
