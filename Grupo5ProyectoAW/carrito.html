@@ -12,51 +12,76 @@
     <link rel="stylesheet" href="css/index-style.css">
     <link rel="icon" href="img/icono.png" type="image/png">
     <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+    
+        .content {
+            flex: 1;
+        }
+    
         body {
             background-color: #f8f9fa;
         }
+    
         .sidebar {
             background-color: #343a40;
             color: #fff;
             padding: 15px;
         }
+    
         .sidebar a {
             color: #fff;
             text-decoration: none;
         }
+    
         .sidebar a:hover {
             text-decoration: underline;
         }
+    
         .shopping-cart {
             padding: 30px;
         }
+    
         .shopping-cart img {
             max-width: 100px;
         }
+    
         .order-summary {
             border: 1px solid #ddd;
             padding: 20px;
             background-color: #fff;
         }
+    
         .footer {
             background-color: #343a40;
             color: #fff;
             padding: 20px;
+            position: static;
+            width: 100%;
         }
+    
         .footer a {
             color: #fff;
             text-decoration: none;
         }
+    
         .footer a:hover {
             text-decoration: underline;
         }
+    
         .animated {
             transition: transform 0.2s;
         }
+    
         .animated:hover {
             transform: scale(1.05);
         }
     </style>
+    
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -174,7 +199,7 @@
         </div>
     </div>
 
-    <footer>
+    <footer class="footer">
         <div class="inf">
             <h2>BeastComplay</h2>
             <p></p>
