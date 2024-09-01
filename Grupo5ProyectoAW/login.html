@@ -8,22 +8,20 @@
     <link rel="stylesheet" href="css/bootstrap-grid.min.css">
     <link rel="stylesheet" href="css/login.css">
     <link rel="icon" href="img/icono.png" type="image/png">
-    <script src="js/login.js" defer></script>
 </head>
 <body>
     <main class="body1 fade-in">
         <div class="container">
             <h1>Iniciar Sesión</h1>
             <br>
-            <form id="login-form" class="form-group">
+            <form action="php/login.php" method="POST" id="login-form" class="form-group">
                 <img src="img/avatar.png" alt="User Icon" style="width: 50px;">
-                <input type="text" name="username" id="username" placeholder="Username or Email" required>
+                <input type="text" name="identifier" id="username" placeholder="Correo o Usuario" required>
                 <img src="img/candado.png" alt="Lock Icon" style="width: 50px;">
                 <input type="password" name="password" id="password" placeholder="Password" required>
+                <input type="submit" class="btn btn-primary" value="Iniciar Sesión">
             </form>
             <div id="error-message" class="error-message"></div>
-            <br>
-            <button class="btn btn-primary" id="login-button">Iniciar Sesión</button>
             <br>
             <button class="btn btn-white">
                 <img src="img/cromo.png" alt="" style="width: 30px;">
