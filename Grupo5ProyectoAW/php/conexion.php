@@ -1,8 +1,8 @@
 <?php
-$host = 'localhost';
-$dbname = 'Proyecto_Drones';
+$host = '4.203.136.126';
+$dbname = 'backupPrueba';
 $user = 'postgres';
-$password = '1728036060';
+$password = 'Edison23.';
 
 try {
     $pdo = new PDO("pgsql:host=$host;dbname=$dbname", $user, $password);
