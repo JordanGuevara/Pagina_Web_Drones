@@ -188,6 +188,13 @@ $totals = calculateTotals($cartProducts);
                         <a class="dropdown-item" href="login.html">Cerrar Sesión</a>
                     </div>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="carrito.php">Carrito 
+                        <span class="badge badge-pill badge-light">
+                            <?php echo count($_SESSION['cart']); ?>
+                        </span>
+                    </a>
+                </li>
             </ul>
         </div>
     </nav>
