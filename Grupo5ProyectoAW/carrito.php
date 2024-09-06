@@ -262,7 +262,7 @@ $totals = calculateTotals($cartProducts);
                 <div class="d-flex justify-content-between">
                     <button type="submit" name="update_cart" class="btn btn-secondary">Actualizar Carrito</button>
                     <button type="submit" name="clear_cart" class="btn btn-danger">Vaciar Carrito</button>
-                    <a href="#" class="btn btn-success">Proceder al Pago</a>
+                    <a href="pago.php" class="btn btn-success">Proceder al Pago</a>
                 </div>
             </form>
         <?php endif; ?>
