@@ -6,8 +6,12 @@ $correo = $_POST['correo'];
 $password = md5($_POST['password']);
 $repassword = md5($_POST['repassword']);
 
+$response = [];
+
 if ($password !== $repassword) {
-    echo "<p style='color:red;'>Las contraseñas no coinciden. Por favor, inténtalo de nuevo.</p>";
+    $response['status'] = 'error';
+    $response['message'] = 'Las contraseñas no coinciden. Por favor, inténtalo de nuevo.';
+    echo json_encode($response);
     exit;
 }
 
@@ -17,7 +21,9 @@ $stmt->execute(['correo' => $correo]);
 $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
 if ($user) {
-    echo "<p style='color:red;'>El correo ya está registrado. Por favor, inicia sesión.</p>";
+    $response['status'] = 'error';
+    $response['message'] = 'El correo ya está registrado. Por favor, inicia sesión.';
+    echo json_encode($response);
     exit;
 }
 
@@ -29,6 +35,7 @@ $stmt->execute([
     'password' => $password
 ]);
 
-echo "<p style='color:green;'>Registro exitoso. Ahora puedes iniciar sesión.</p>";
+$response['status'] = 'success';
+$response['message'] = 'Registro exitoso. Ahora puedes iniciar sesión.';
+echo json_encode($response);
 ?>
-

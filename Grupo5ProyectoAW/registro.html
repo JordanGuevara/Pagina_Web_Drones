@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="css/registro-style.css">
     <title>Registro</title>
-    <script src="js/registros.js" defer></script>
+    <script src="js/registro.js" defer></script>
 </head>
 
 <body>
@@ -18,15 +18,15 @@
             <div class="login-container">
                 <div class="register">
                     <h2>Registrarse</h2>
-                    <form action="php/registro.php" method="POST" id="register-form">
+                    <form id="register-form">
                         <input type="text" name="nombre" id="nombre" placeholder="Nombre" class="nombre" required>
                         <input type="email" name="correo" id="correo" placeholder="Correo" class="correo" required>
                         <input type="password" name="password" id="pass" placeholder="Contraseña" class="pass" required>
                         <input type="password" name="repassword" id="repass" placeholder="Confirma contraseña" class="repass" required>
                         <input type="submit" class="submit" value="REGISTRARSE">
                     </form>
-                    <p id="message"></p>
-                    <a href="login.html">
+                    <p id="message" style="color:red;"></p>
+                    <a href="login.html"></a>
                 </div>
                 <div class="login">
                     <h2>Iniciar Sesión</h2>
@@ -39,7 +39,6 @@
             </div>
         </div>
     </main>
-    
 </body>
 
 </html>
